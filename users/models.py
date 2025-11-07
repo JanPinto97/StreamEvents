@@ -31,3 +31,14 @@ class Follow(models.Model):
 
     def __str__(self):
         return f'{self.follower} -> {self.following}'
+    
+class Event(models.Model):
+    username = models.CharField(max_length=150)
+    email = models.EmailField()
+    first_name = models.CharField(max_length=100)
+    last_name = models.CharField(max_length=100)
+    #password1 = models.CharField(max_length=128)
+    #password2 = models.CharField(max_length=128)
+
+    def __str__(self):
+        return self.username

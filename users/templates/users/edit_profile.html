@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block title %}Editar Perfil{% endblock %}
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-6">
+        <h2>Editar Perfil</h2>
+        <form method="post" enctype="multipart/form-data" class="needs-validation" novalidate>
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="btn btn-primary">Desar Canvis</button>
+        </form>
+    </div>
+</div>
+<script>
+    // Validació en temps real amb JavaScript
+    document.querySelectorAll('.needs-validation input, .needs-validation textarea').forEach(input => {
+        input.addEventListener('input', function () {
+            if (this.checkValidity()) {
+                this.classList.add('is-valid');
+                this.classList.remove('is-invalid');
+            } else {
+                this.classList.add('is-invalid');
+                this.classList.remove('is-valid');
+            }
+        });
+    });
+</script>
+{% endblock %}

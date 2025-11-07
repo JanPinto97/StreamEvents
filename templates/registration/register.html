@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block title %}Registre{% endblock %}
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-6">
+        <h2>Registre</h2>
+        <form method="post" class="needs-validation" novalidate>
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="btn btn-primary">Registrar-se</button>
+        </form>
+    </div>
+</div>
+<script>
+    // Validació en temps real amb JavaScript
+    document.querySelectorAll('.needs-validation input').forEach(input => {
+        input.addEventListener('input', function () {
+            if (this.checkValidity()) {
+                this.classList.add('is-valid');
+                this.classList.remove('is-invalid');
+            } else {
+                this.classList.add('is-invalid');
+                this.classList.remove('is-valid');
+            }
+        });
+    });
+</script>
+{% endblock %}

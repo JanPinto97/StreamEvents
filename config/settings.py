@@ -154,3 +154,6 @@ CSRF_COOKIE_SECURE = True
 SESSION_COOKIE_SECURE = True
 SECURE_HSTS_SECONDS = 3600
 
+# Configuració per a fitxers media
+MEDIA_URL = '/media/'
+MEDIA_ROOT = BASE_DIR / 'media'
