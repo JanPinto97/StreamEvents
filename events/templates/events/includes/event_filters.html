@@ -1,0 +1,29 @@
+<form method="get" class="card card-body shadow-sm">
+    <div class="row g-3">
+        <div class="col-md-4">
+            {{ form.search.label_tag }}
+            {{ form.search }}
+        </div>
+        <div class="col-md-3">
+            {{ form.category.label_tag }}
+            {{ form.category }}
+        </div>
+        <div class="col-md-3">
+            {{ form.status.label_tag }}
+            {{ form.status }}
+        </div>
+        <div class="col-md-2 d-flex align-items-end">
+            <button type="submit" class="btn btn-outline-primary w-100">Filtrar</button>
+        </div>
+    </div>
+    <div class="row g-3 mt-2">
+        <div class="col-md-3">
+            {{ form.date_from.label_tag }}
+            {{ form.date_from }}
+        </div>
+        <div class="col-md-3">
+            {{ form.date_to.label_tag }}
+            {{ form.date_to }}
+        </div>
+    </div>
+</form>
