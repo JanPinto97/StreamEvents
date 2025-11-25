@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% block title %}{{ event.title }} | StreamEvents{% endblock %}
+{% block content %}
+<div class="row">
+    <div class="col-lg-8">
+        {% if event.thumbnail %}
+            <img src="{{ event.thumbnail.url }}" class="img-fluid rounded mb-3" alt="{{ event.title }}">
+        {% endif %}
+        <h1 class="h3">{{ event.title }}</h1>
+        <p class="text-muted">{{ event.get_category_display }} · {{ event.scheduled_date|date:"d/m/Y H:i" }}</p>
+        <p>{{ event.description }}</p>
+        {% if event.tags %}
+            <div class="mb-3">
+                {% for tag in event.get_tags_list %}
+                    <span class="badge bg-secondary">{{ tag }}</span>
+                {% endfor %}
+            </div>
+        {% endif %}
+        {% if event.stream_url %}
+            <div class="ratio ratio-16x9 mb-3">
+                <iframe src="{{ event.get_stream_embed_url }}" allowfullscreen></iframe>
+            </div>
+        {% endif %}
+    </div>
+    <div class="col-lg-4">
+        <div class="card mb-3">
+            <div class="card-body">
+                <p><strong>Estat:</strong> {{ event.get_status_display }}</p>
+                <p><strong>Programat:</strong> {{ event.scheduled_date|date:"d/m/Y H:i" }}</p>
+                <p><strong>Màxim espectadors:</strong> {{ event.max_viewers }}</p>
+                <p><strong>Creador:</strong> {{ event.creator }}</p>
+                {% if event.get_duration %}
+                    <p><strong>Durada estimada:</strong> {{ event.get_duration }}</p>
+                {% endif %}
+                {% if user == event.creator %}
+                    <div class="d-flex gap-2 mt-2">
+                        <a class="btn btn-outline-primary" href="{% url 'events:event_update' event.pk %}">Editar</a>
+                        <a class="btn btn-outline-danger" href="{% url 'events:event_delete' event.pk %}">Eliminar</a>
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
