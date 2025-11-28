@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container py-4">
+    <h1>Eliminar esdeveniment</h1>
+    <div class="alert alert-danger">
+        <p>Estàs segur que vols eliminar l'esdeveniment <strong>"{{ event.title }}"</strong>?</p>
+        <p>Aquesta acció no es pot desfer.</p>
+    </div>
+
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit" class="btn btn-danger">Sí, eliminar</button>
+        <a href="{{ event.get_absolute_url }}" class="btn btn-secondary">Cancel·lar</a>
+    </form>
+</div>
+{% endblock %}

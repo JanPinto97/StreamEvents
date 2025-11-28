@@ -1,0 +1,38 @@
+{% load static %}
+<div class="card h-100">
+    {% if event.thumbnail %}
+        <img src="{{ event.thumbnail.url }}" class="card-img-top" alt="{{ event.title }}">
+    {% else %}
+        <img src="{% static 'events/default_thumbnails/'|add:event.category|add:'.png' %}"
+             class="card-img-top"
+             alt="{{ event.title }}">
+    {% endif %}
+    <div class="card-body d-flex flex-column">
+        <h5 class="card-title">{{ event.title }}</h5>
+        <p class="card-text small mb-1">
+            <strong>Categoria:</strong> {{ event.get_category_display }}
+        </p>
+        <p class="card-text small mb-1">
+            <strong>Data:</strong> {{ event.scheduled_date }}jp
+        </p>
+        <p class="card-text small mb-2">
+            <strong>Estat:</strong>
+            <span class="badge 
+                {% if event.status == 'live' %}bg-danger
+                {% elif event.status == 'scheduled' %}bg-primary
+                {% elif event.status == 'finished' %}bg-secondary
+                {% else %}bg-dark{% endif %}
+            ">
+                {{ event.get_status_display }}
+            </span>
+        </p>
+
+        {% if event.is_featured %}
+            <span class="badge bg-warning text-dark mb-2">Destacat</span>
+        {% endif %}
+
+        <a href="{{ event.get_absolute_url }}" class="btn btn-sm btn-outline-primary mt-auto">
+            Veure detall
+        </a>
+    </div>
+</div>

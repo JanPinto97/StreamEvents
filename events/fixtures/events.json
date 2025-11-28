@@ -1,0 +1,287 @@
+[
+  {
+    "model": "events.event",
+    "pk": 1,
+    "fields": {
+      "title": "Torneig de Gaming Retro",
+      "description": "Competició amistosa de jocs retro amb comentaris en directe i xat amb els participants.",
+      "creator": 145,
+      "category": "gaming",
+      "scheduled_date": "2025-01-15T18:00:00Z",
+      "status": "scheduled",
+      "thumbnail": "events/thumbnails/gaming_retro.jpg",
+      "max_viewers": 200,
+      "is_featured": true,
+      "created_at": "2024-12-01T10:00:00Z",
+      "updated_at": "2024-12-01T10:00:00Z",
+      "tags": "retro,torneig,arcade",
+      "stream_url": "https://www.youtube.com/watch?v=AbCdEfG1234"
+    }
+  },
+  {
+    "model": "events.event",
+    "pk": 2,
+    "fields": {
+      "title": "Concert Acústic en Streaming",
+      "description": "Sessió íntima de música acústica amb peticions de cançons del públic.",
+      "creator": 146,
+      "category": "music",
+      "scheduled_date": "2024-11-10T20:30:00Z",
+      "status": "finished",
+      "thumbnail": "events/thumbnails/acoustic_concert.jpg",
+      "max_viewers": 500,
+      "is_featured": true,
+      "created_at": "2024-11-01T19:00:00Z",
+      "updated_at": "2024-11-10T22:00:00Z",
+      "tags": "acústic,directe,concert",
+      "stream_url": "https://youtu.be/ZXCVBNM9876"
+    }
+  },
+  {
+    "model": "events.event",
+    "pk": 3,
+    "fields": {
+      "title": "Podcast de Tecnologia i Tendències",
+      "description": "Debat setmanal sobre novetats tecnològiques, IA, gadgets i desenvolupament de programari.",
+      "creator": 147,
+      "category": "technology",
+      "scheduled_date": "2024-12-20T19:00:00Z",
+      "status": "finished",
+      "thumbnail": "events/thumbnails/tech_podcast.jpg",
+      "max_viewers": 300,
+      "is_featured": false,
+      "created_at": "2024-12-15T09:00:00Z",
+      "updated_at": "2024-12-20T21:00:00Z",
+      "tags": "tecnologia,podcast,ia,novetats",
+      "stream_url": "https://www.youtube.com/watch?v=TECH1234567"
+    }
+  },
+  {
+    "model": "events.event",
+    "pk": 4,
+    "fields": {
+      "title": "Classe d'Introducció a Django",
+      "description": "Sessió formativa per explicar els conceptes bàsics de Django, models, vistes i templates.",
+      "creator": 145,
+      "category": "education",
+      "scheduled_date": "2025-02-01T17:00:00Z",
+      "status": "scheduled",
+      "thumbnail": "events/thumbnails/django_intro.jpg",
+      "max_viewers": 150,
+      "is_featured": true,
+      "created_at": "2024-12-18T10:30:00Z",
+      "updated_at": "2024-12-18T10:30:00Z",
+      "tags": "django,educació,programació,web",
+      "stream_url": "https://www.youtube.com/watch?v=DjangoABC123"
+    }
+  },
+  {
+    "model": "events.event",
+    "pk": 5,
+    "fields": {
+      "title": "Xerrada Motivacional per Freelancers",
+      "description": "Experiències reals, consells pràctics i estratègies per a professionals autònoms.",
+      "creator": 146,
+      "category": "talk",
+      "scheduled_date": "2024-10-05T18:00:00Z",
+      "status": "finished",
+      "thumbnail": "events/thumbnails/freelance_talk.jpg",
+      "max_viewers": 250,
+      "is_featured": false,
+      "created_at": "2024-09-28T16:00:00Z",
+      "updated_at": "2024-10-05T20:00:00Z",
+      "tags": "motivació,freelance,experiències",
+      "stream_url": "https://youtu.be/TALK9876543"
+    }
+  },
+  {
+    "model": "events.event",
+    "pk": 6,
+    "fields": {
+      "title": "Partit de eSports en Directe",
+      "description": "Retransmissió d'un partit competitiu d'eSports amb comentaris en directe.",
+      "creator": 147,
+      "category": "sports",
+      "scheduled_date": "2025-03-10T19:30:00Z",
+      "status": "scheduled",
+      "thumbnail": "events/thumbnails/esports_match.jpg",
+      "max_viewers": 1000,
+      "is_featured": true,
+      "created_at": "2025-01-05T12:00:00Z",
+      "updated_at": "2025-01-05T12:00:00Z",
+      "tags": "esports,competitiu,gaming",
+      "stream_url": "https://www.twitch.tv/esports_channel"
+    }
+  },
+  {
+    "model": "events.event",
+    "pk": 7,
+    "fields": {
+      "title": "Sessió de Q&A sobre Programació",
+      "description": "Sessió oberta de preguntes i respostes sobre desenvolupament web, backend i bones pràctiques.",
+      "creator": 145,
+      "category": "education",
+      "scheduled_date": "2024-11-25T18:00:00Z",
+      "status": "live",
+      "thumbnail": "events/thumbnails/qa_programming.jpg",
+      "max_viewers": 300,
+      "is_featured": false,
+      "created_at": "2024-11-20T11:00:00Z",
+      "updated_at": "2024-11-25T18:30:00Z",
+      "tags": "q&a,programació,backend,frontend",
+      "stream_url": "https://www.youtube.com/watch?v=LIVEQA12345"
+    }
+  },
+  {
+    "model": "events.event",
+    "pk": 8,
+    "fields": {
+      "title": "Jam de Música Electrònica",
+      "description": "Improvisació de música electrònica amb sintetitzadors, loops i participació del xat.",
+      "creator": 146,
+      "category": "music",
+      "scheduled_date": "2025-01-05T21:00:00Z",
+      "status": "scheduled",
+      "thumbnail": "events/thumbnails/electronic_jam.jpg",
+      "max_viewers": 350,
+      "is_featured": false,
+      "created_at": "2024-12-22T14:00:00Z",
+      "updated_at": "2024-12-22T14:00:00Z",
+      "tags": "música electrònica,improvisació,live",
+      "stream_url": "https://youtu.be/ELECSTREAM5678"
+    }
+  },
+  {
+    "model": "events.event",
+    "pk": 9,
+    "fields": {
+      "title": "Taller d'Art Digital",
+      "description": "Sessió pràctica de dibuix digital amb tablet gràfica i demostració de tècniques bàsiques.",
+      "creator": 147,
+      "category": "art",
+      "scheduled_date": "2024-09-15T17:00:00Z",
+      "status": "finished",
+      "thumbnail": "events/thumbnails/digital_art_workshop.jpg",
+      "max_viewers": 180,
+      "is_featured": false,
+      "created_at": "2024-09-01T09:30:00Z",
+      "updated_at": "2024-09-15T19:00:00Z",
+      "tags": "art digital,il·lustració,tutorial",
+      "stream_url": "https://www.youtube.com/watch?v=ARTDIGI12345"
+    }
+  },
+  {
+    "model": "events.event",
+    "pk": 10,
+    "fields": {
+      "title": "Nit de Cinema i Entreteniment",
+      "description": "Comentem clips, tràilers i escenes famoses mentre xategem amb la comunitat.",
+      "creator": 145,
+      "category": "entertainment",
+      "scheduled_date": "2024-12-31T22:00:00Z",
+      "status": "scheduled",
+      "thumbnail": "events/thumbnails/movie_night.jpg",
+      "max_viewers": 400,
+      "is_featured": true,
+      "created_at": "2024-12-10T15:00:00Z",
+      "updated_at": "2024-12-10T15:00:00Z",
+      "tags": "cinema,entreteniment,clips",
+      "stream_url": "https://www.twitch.tv/movienight_channel"
+    }
+  },
+  {
+    "model": "events.event",
+    "pk": 11,
+    "fields": {
+      "title": "Sessió de Debugging en Directe",
+      "description": "Resolem bugs reals en projectes de la comunitat mentre expliquem el procés de pensament.",
+      "creator": 146,
+      "category": "technology",
+      "scheduled_date": "2024-11-30T16:00:00Z",
+      "status": "cancelled",
+      "thumbnail": "events/thumbnails/debugging_live.jpg",
+      "max_viewers": 120,
+      "is_featured": false,
+      "created_at": "2024-11-10T10:00:00Z",
+      "updated_at": "2024-11-25T12:00:00Z",
+      "tags": "debugging,codi,livecoding",
+      "stream_url": "https://www.youtube.com/watch?v=DEBUG123456"
+    }
+  },
+  {
+    "model": "events.event",
+    "pk": 12,
+    "fields": {
+      "title": "Marató de Gaming Cooperatiu",
+      "description": "Sessió llarga jugant en cooperatiu amb amics i la comunitat.",
+      "creator": 147,
+      "category": "gaming",
+      "scheduled_date": "2024-10-20T14:00:00Z",
+      "status": "finished",
+      "thumbnail": "events/thumbnails/co_op_gaming.jpg",
+      "max_viewers": 600,
+      "is_featured": true,
+      "created_at": "2024-10-05T13:00:00Z",
+      "updated_at": "2024-10-20T22:00:00Z",
+      "tags": "co-op,gaming,marató",
+      "stream_url": "https://www.twitch.tv/co_op_marathon"
+    }
+  },
+  {
+    "model": "events.event",
+    "pk": 13,
+    "fields": {
+      "title": "Sessió de Preparació d'Exàmens",
+      "description": "Estudi en directe amb tècniques de concentració i planificació.",
+      "creator": 145,
+      "category": "education",
+      "scheduled_date": "2025-01-08T09:00:00Z",
+      "status": "scheduled",
+      "thumbnail": "events/thumbnails/study_session.jpg",
+      "max_viewers": 220,
+      "is_featured": false,
+      "created_at": "2024-12-27T08:00:00Z",
+      "updated_at": "2024-12-27T08:00:00Z",
+      "tags": "estudi,productivitat,exàmens",
+      "stream_url": "https://www.youtube.com/watch?v=STUDYSESSION123"
+    }
+  },
+  {
+    "model": "events.event",
+    "pk": 14,
+    "fields": {
+      "title": "Directe d'Art i Creativitat",
+      "description": "Explorem diferents tècniques creatives, des de lettering fins a collage digital.",
+      "creator": 146,
+      "category": "art",
+      "scheduled_date": "2024-12-05T19:00:00Z",
+      "status": "live",
+      "thumbnail": "events/thumbnails/creative_live.jpg",
+      "max_viewers": 180,
+      "is_featured": false,
+      "created_at": "2024-11-28T12:00:00Z",
+      "updated_at": "2024-12-05T19:15:00Z",
+      "tags": "creativitat,art,lettering",
+      "stream_url": "https://youtu.be/CREATIVE98765"
+    }
+  },
+  {
+    "model": "events.event",
+    "pk": 15,
+    "fields": {
+      "title": "Demo de Plataforma OtherStream",
+      "description": "Prova d'una nova plataforma de streaming amb funcionalitats experimentals.",
+      "creator": 147,
+      "category": "other",
+      "scheduled_date": "2025-02-20T18:30:00Z",
+      "status": "scheduled",
+      "thumbnail": "events/thumbnails/other_stream_demo.jpg",
+      "max_viewers": 90,
+      "is_featured": false,
+      "created_at": "2025-01-10T11:00:00Z",
+      "updated_at": "2025-01-10T11:00:00Z",
+      "tags": "demo,plataforma,other",
+      "stream_url": "https://example.com/custom-stream-url"
+    }
+  }
+]

@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container py-4">
+    <div class="d-flex justify-content-between align-items-center mb-3">
+        <h1>Núvol d'etiquetes</h1>
+        <a href="{% url 'events:event_list' %}" class="btn btn-outline-secondary">
+            Tornar al llistat
+        </a>
+    </div>
+
+    {% if tag_cloud %}
+        <div class="border rounded p-3 bg-light">
+            {% for tag in tag_cloud %}
+                <a href="{% url 'events:events_by_tag' tag.name %}"
+                   class="me-2 mb-2 d-inline-block text-decoration-none">
+                    <span class="badge bg-secondary
+                        {% if tag.weight == 3 %} fs-4
+                        {% elif tag.weight == 2 %} fs-5
+                        {% else %} fs-6
+                        {% endif %}
+                    ">
+                        {{ tag.name }} ({{ tag.count }})
+                    </span>
+                </a>
+            {% endfor %}
+        </div>
+    {% else %}
+        <p>No hi ha etiquetes disponibles.</p>
+    {% endif %}
+</div>
+{% endblock %}

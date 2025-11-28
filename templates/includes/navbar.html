@@ -6,6 +6,27 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'events:event_list' %}">
+                        <i class="fas fa-video"></i> Esdeveniments
+                    </a>
+                </li>
+
+                {% if user.is_authenticated %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'events:my_events' %}">
+                            <i class="fas fa-user-clock"></i> Els meus esdeveniments
+                        </a>
+                    </li>
+                {% endif %}
+
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'events:tag_cloud' %}">
+                        <i class="fas fa-tags"></i> Etiquetes
+                    </a>
+                </li>
+
+                {# … i després deixes la part que ja tenies de perfil/login/logout #}
                 {% if user.is_authenticated %}
                     <li class="nav-item">
                         <a class="nav-link" href="{% url 'users:profile' %}">

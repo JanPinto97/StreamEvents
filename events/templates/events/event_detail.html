@@ -1,0 +1,78 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<div class="container py-4">
+    <div class="d-flex justify-content-between align-items-center mb-3">
+        <h1>{{ event.title }}</h1>
+
+        {% if is_creator %}
+            <div>
+                <a href="{% url 'events:event_update' event.pk %}" class="btn btn-sm btn-warning">Editar</a>
+                <a href="{% url 'events:event_delete' event.pk %}" class="btn btn-sm btn-danger">Eliminar</a>
+            </div>
+        {% endif %}
+    </div>
+
+    <div class="row">
+         <div class="col-md-4 mb-3">
+            {% if event.thumbnail %}
+                <img src="{{ event.thumbnail.url }}" alt="{{ event.title }}" class="img-fluid rounded">
+            {% else %}
+                <img
+                    src="{% static 'events/default_thumbnails/'|add:event.category|add:'.png' %}"
+                    alt="{{ event.title }}"
+                    class="img-fluid rounded"
+                >
+            {% endif %}
+
+            <div class="mt-3">
+                <p><strong>Categoria:</strong> {{ event.get_category_display }}</p>
+                <p><strong>Estat:</strong>
+                    <span class="badge 
+                        {% if event.status == 'live' %}bg-danger
+                        {% elif event.status == 'scheduled' %}bg-primary
+                        {% elif event.status == 'finished' %}bg-secondary
+                        {% else %}bg-dark{% endif %}
+                    ">
+                        {{ event.get_status_display }}
+                    </span>
+                </p>
+                <p><strong>Data programada:</strong> {{ event.scheduled_date }}</p>
+                <p><strong>Màxim espectadors:</strong> {{ event.max_viewers }}</p>
+                <p><strong>Destacat:</strong> {{ event.is_featured|yesno:"Sí,No" }}</p>
+                <p><strong>Creador:</strong> {{ event.creator.username }}</p>
+            </div>
+
+            {% if event.tags %}
+                <div class="mt-3">
+                    <strong>Etiquetes:</strong><br>
+                    {% for tag in event.get_tags_list %}
+                        <a href="{% url 'events:events_by_tag' tag %}"
+                        class="badge bg-info text-dark me-1 mb-1 text-decoration-none">
+                            {{ tag }}
+                        </a>
+                    {% endfor %}
+                </div>
+            {% endif %}
+        </div>
+
+        <div class="col-md-8">
+            <h4>Descripció</h4>
+            <p>{{ event.description|linebreaks }}</p>
+
+            {% if event.stream_url %}
+                <hr>
+                <h4>Stream / Demo</h4>
+                <div class="ratio ratio-16x9">
+                    <iframe
+                        src="{{ event.get_stream_embed_url }}"
+                        title="Stream"
+                        frameborder="0"
+                        allowfullscreen>
+                    </iframe>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% endblock %}
