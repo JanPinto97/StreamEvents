@@ -1,0 +1,160 @@
+/* ===========================
+   CONTENIDOR PRINCIPAL
+=========================== */
+.chat-container {
+  height: 600px;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #dee2e6;
+  border-radius: 8px;
+  background-color: #ffffff;
+  overflow: hidden;
+}
+
+/* ===========================
+   CAPÇALERA
+=========================== */
+.chat-header {
+  background-color: #f8f9fa;
+  padding: 15px;
+  border-bottom: 1px solid #dee2e6;
+  font-size: 1rem;
+}
+
+/* ===========================
+   MISSATGES
+=========================== */
+.chat-messages {
+  flex: 1;
+  overflow-y: auto;
+  max-height: 450px;
+  padding: 15px;
+  background-color: #fafafa;
+}
+
+/* Scrollbar (Webkit) */
+.chat-messages::-webkit-scrollbar {
+  width: 8px;
+}
+
+.chat-messages::-webkit-scrollbar-thumb {
+  background-color: #ced4da;
+  border-radius: 4px;
+}
+
+.chat-messages::-webkit-scrollbar-thumb:hover {
+  background-color: #adb5bd;
+}
+
+/* ===========================
+   MISSATGE INDIVIDUAL
+=========================== */
+.chat-message {
+  background-color: #f1f3f5;
+  padding: 10px 12px;
+  margin-bottom: 10px;
+  border-radius: 6px;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.chat-message:hover {
+  background-color: #e9ecef;
+}
+
+/* Missatge destacat */
+.chat-message.highlighted {
+  background-color: #fff3cd;
+  border-left: 4px solid #ffc107;
+}
+
+/* ===========================
+   CAPÇALERA DEL MISSATGE
+=========================== */
+.message-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 4px;
+}
+
+.message-header strong {
+  font-weight: 600;
+}
+
+.message-header small {
+  font-size: 0.75rem;
+  color: #6c757d;
+}
+
+/* ===========================
+   CONTINGUT
+=========================== */
+.message-content {
+  word-wrap: break-word;
+  line-height: 1.4;
+  font-size: 0.95rem;
+}
+
+/* ===========================
+   ACCIONS
+=========================== */
+.message-actions {
+  text-align: right;
+  margin-top: 5px;
+}
+
+.message-actions .btn {
+  font-size: 0.75rem;
+  padding: 2px 6px;
+}
+
+/* ===========================
+   FORMULARI
+=========================== */
+.chat-form {
+  padding: 15px;
+  border-top: 1px solid #dee2e6;
+  background-color: #f8f9fa;
+}
+
+.chat-form textarea {
+  resize: none;
+}
+
+/* ===========================
+   ERRORS
+=========================== */
+#chat-errors {
+  min-height: 18px;
+}
+
+/* ===========================
+   RESPONSIVE
+=========================== */
+@media (max-width: 992px) {
+  .chat-container {
+    height: 400px;
+    margin-top: 15px;
+  }
+
+  .chat-messages {
+    max-height: 300px;
+  }
+}
+
+@media (max-width: 576px) {
+  .chat-container {
+    height: 350px;
+  }
+
+  .chat-header {
+    padding: 10px;
+  }
+
+  .chat-form {
+    padding: 10px;
+  }
+
+  .chat-messages {
+    padding: 10px;
+  }
+}

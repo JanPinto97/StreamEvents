@@ -4,6 +4,8 @@ from django.core.paginator import Paginator
 from django.shortcuts import get_object_or_404, redirect, render
 from django.http import Http404, JsonResponse
 from urllib.parse import unquote
+from chat.forms import ChatMessageForm
+
 
 
 from .models import Event
@@ -68,6 +70,7 @@ def event_detail_view(request, pk):
     context = {
         'event': event,
         'is_creator': is_creator,
+        'chat_form': ChatMessageForm(),
     }
     return render(request, 'events/event_detail.html', context)
 
