@@ -2,6 +2,7 @@ from djongo import models
 from django.conf import settings
 from django.urls import reverse
 from django.utils import timezone
+from django.db.models import JSONField
 from urllib.parse import urlparse, parse_qs
 from PIL import Image
 from collections import Counter
@@ -78,6 +79,11 @@ class Event(models.Model):
         blank=True,
         null=True,
     )
+    
+    # --- Semantic search embeddings ---
+    embedding = models.JSONField(blank=True, null=True)  # llista de floats
+    embedding_model = models.CharField(max_length=200, blank=True, null=True)
+    embedding_updated_at = models.DateTimeField(blank=True, null=True)
     
     @classmethod
     def update_statuses(cls):
@@ -281,3 +287,5 @@ class Event(models.Model):
         # Per altres plataformes retornem la mateixa URL. Si és embeddable,
         # l'iframe la mostrarà igualment.
         return url
+
+    

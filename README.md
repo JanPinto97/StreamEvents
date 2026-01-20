@@ -53,6 +53,9 @@ streamevents/
 
 ---
 
+## 🚀 Iniciar el projecte
+`python manage.py runserver`
+
 ## 🚀 Instal·lació ràpida
 
 ### Clonar el repositori
