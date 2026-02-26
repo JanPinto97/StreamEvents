@@ -1,0 +1,82 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container py-4">
+  <h2>🤖 Assistent d'esdeveniments</h2>
+
+  <div class="form-check my-3">
+    <input class="form-check-input" type="checkbox" id="onlyFuture" checked>
+    <label class="form-check-label" for="onlyFuture">Només futurs</label>
+  </div>
+
+  <div class="input-group mb-3">
+    <input id="msg" class="form-control" placeholder="Ex: vull un concert de jazz aquest cap de setmana">
+    <button id="send" class="btn btn-primary">Enviar</button>
+  </div>
+
+  <div class="card">
+    <div class="card-body">
+      <div id="answer" class="mb-2"></div>
+      <div id="cards"></div>
+    </div>
+  </div>
+</div>
+
+<script>
+  async function send() {
+  const message = document.getElementById("msg").value.trim();
+  if (!message) return;
+
+  const onlyFuture = document.getElementById("onlyFuture").checked;
+
+  document.getElementById("answer").innerText = "Pensant...";
+  document.getElementById("cards").innerHTML = "";
+
+  const res = await fetch("/assistant/api/chat/", {
+    method: "POST",
+    headers: {"Content-Type":"application/json"},
+    body: JSON.stringify({message, only_future: onlyFuture})
+  });
+
+  const data = await res.json();
+
+  // Mostra resposta
+  document.getElementById("answer").innerText = data.answer || "";
+
+  // Mostra events
+  const cards = data.events || [];
+  if (cards.length > 0) {
+    const ul = document.createElement("ul");
+    ul.className = "mt-3";
+
+    cards.forEach(ev => {
+      const li = document.createElement("li");
+      li.innerHTML = `
+        <a href="${ev.url}"><strong>${ev.title}</strong></a>
+        — ${ev.category}
+        — ${ev.scheduled_date}
+        (score ${ev.score})
+      `;
+      ul.appendChild(li);
+    });
+
+    document.getElementById("cards").appendChild(ul);
+  } else {
+    document.getElementById("cards").innerHTML =
+      "<p class='text-muted mt-3'>Cap resultat amb suficient score.</p>";
+  }
+
+  // Mostra follow_up si existeix
+  if (data.follow_up) {
+    const p = document.createElement("p");
+    p.className = "text-muted mt-2";
+    p.innerText = "Pregunta: " + data.follow_up;
+    document.getElementById("cards").appendChild(p);
+  }
+}
+
+  document.getElementById("send").addEventListener("click", send);
+  document.getElementById("msg").addEventListener("keydown", (e) => {
+    if (e.key === "Enter") send();
+  });
+</script>
+{% endblock %}

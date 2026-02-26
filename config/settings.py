@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'events',
     'chat',
     'semantic_search',
+    'assistant_chat',
 ]
 
 MIDDLEWARE = [

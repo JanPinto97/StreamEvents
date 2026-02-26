@@ -26,6 +26,7 @@ urlpatterns = [
     path('chat/', include('chat.urls')),
     path('', TemplateView.as_view(template_name='index.html'), name='home'),
     path("", include("semantic_search.urls")),
+    path("", include("assistant_chat.urls")),
 
 ]
 
